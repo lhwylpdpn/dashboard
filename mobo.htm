@@ -1,0 +1,317 @@
+<!doctype html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <link rel="stylesheet" href="css/font-icons/entypo/css/entypo.css" id="style-resource-2">
+    <link rel="stylesheet" href="css/bootstrap-min.css" id="style-resource-4">
+    <link rel="stylesheet" href="css/neon-core-min.css" id="style-resource-5">
+    <link rel="stylesheet" href="css/neon-theme-min.css" id="style-resource-6">
+    <link rel="stylesheet" href="css/neon-forms-min.css" id="style-resource-7">
+    <link rel="stylesheet" href="css/custom-min.css" id="style-resource-8">
+
+
+    <script src="js/gsap/main-gsap.js"></script>
+    <script src="js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/joinable.js"></script>
+    <script src="js/resizeable.js"></script>
+    <script src="js/neon-api.js"></script> 
+    <script src="js/neon-custom.js"></script>
+    <script src="js/cookies.min.js" id="script-resource-7"></script>
+    <script src="js/jquery.validate.min.js" id="script-resource-8"></script>
+    <script src="js/neon-demo.js" id="script-resource-11"></script>
+    <script src="js/neon-skins.js" id="script-resource-12"></script>
+    <script src="js/neon-login.js" id="script-resource-9"></script>
+
+  <script type=text/javascript src="js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+  <script type="text/javascript" src="js/highcharts.js"></script>
+  <script type="text/javascript" src="js/modules/exporting.js"></script>
+
+
+  <script type="text/javascript" src="js/modules/data.js"></script>
+  <script type="text/javascript" src="js/dragresize.js"></script>
+  <script type="text/javascript" src="src/3.js"></script>
+  <script type="text/javascript" src="src/5.js"></script>
+  <script type="text/javascript" src="src/4.js"></script>
+  <script type="text/javascript" src="src/1.js"></script>
+  <script type="text/javascript" src="src/2.js"></script>
+  <script type="text/javascript" src="src/6.js"></script>
+  <script type="text/javascript" src="src/7.js"></script>
+  <script type="text/javascript" src="src/8.js"></script>
+  <script type="text/javascript" src="src/9.js"></script>
+    <script type="text/javascript" src="src/10.js"></script>
+  <script type="text/javascript" src="js/highcharts-more.js"></script>
+  <script type="text/javascript" src="js/dragresize.js"></script>
+  <script type="text/javascript" src="src/3.js"></script>
+  <!--script type="text/javascript" src="src/4.js"></script-->
+  <!--script type="text/javascript" src="src/1.js"></script-->
+<!--script type="text/javascript" src="src/2.js"></script-->
+
+     <style type="text/css">
+        /* Required CSS classes: must be included in all pages using this script */
+
+        /* Apply the element you want to drag/resize */
+        .drsElement {
+            position: absolute;
+            border: 1px solid #333;
+        }
+
+        /*
+ The main mouse handle that moves the whole element.
+ You can apply to the same tag as drsElement if you want.
+*/
+        .drsMoveHandle {
+            height: 20px;
+            background-color: #CCC;
+            border-bottom: 1px solid #666;
+            cursor: move;
+        }
+
+        /*
+ The DragResize object name is automatically applied to all generated
+ corner resize handles, as well as one of the individual classes below.
+*/
+        .dragresize {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            font-size: 1px;
+            background: #EEE;
+            border: 1px solid #333;
+        }
+
+        /*
+ Individual corner classes - required for resize support.
+ These are based on the object name plus the handle ID.
+*/
+        .dragresize-tl {
+            top: -8px;
+            left: -8px;
+            cursor: nw-resize;
+        }
+
+        .dragresize-tm {
+            top: -8px;
+            left: 50%;
+            margin-left: -4px;
+            cursor: n-resize;
+        }
+
+        .dragresize-tr {
+            top: -8px;
+            right: -8px;
+            cursor: ne-resize;
+        }
+
+        .dragresize-ml {
+            top: 50%;
+            margin-top: -4px;
+            left: -8px;
+            cursor: w-resize;
+        }
+
+        .dragresize-mr {
+            top: 50%;
+            margin-top: -4px;
+            right: -8px;
+            cursor: e-resize;
+        }
+
+        .dragresize-bl {
+            bottom: -8px;
+            left: -8px;
+            cursor: sw-resize;
+        }
+
+        .dragresize-bm {
+            bottom: -8px;
+            left: 50%;
+            margin-left: -4px;
+            cursor: s-resize;
+        }
+
+        .dragresize-br {
+            bottom: -8px;
+            right: -8px;
+            cursor: se-resize;
+        }
+    </style>
+    
+
+  <script type="text/javascript">
+
+
+Highcharts.theme = {
+    colors: ["#514F78", "#42A07B", "#9B5E4A", "#72727F", "#1F949A", "#82914E", "#86777F", "#42A07B"],
+    chart: {
+        className: 'skies',
+        borderWidth: 0,
+        plotShadow: true,
+        plotBackgroundImage: 'http://www.highcharts.com/demo/gfx/skies.jpg',
+        plotBackgroundColor: {
+            linearGradient: [0, 0, 250, 500],
+            stops: [
+                [0, 'rgba(255, 255, 255, 1)'],
+                [1, 'rgba(255, 255, 255, 0)']
+            ]
+        },
+        plotBorderWidth: 1
+    },
+    title: {
+        style: {
+            color: '#3E576F',
+            font: '16px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif'
+        }
+    },
+    subtitle: {
+        style: {
+            color: '#6D869F',
+            font: '12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif'
+        }
+    },
+    xAxis: {
+        gridLineWidth: 0,
+        lineColor: '#C0D0E0',
+        tickColor: '#C0D0E0',
+        labels: {
+            style: {
+                color: '#666',
+                fontWeight: 'bold'
+            }
+        },
+        title: {
+            style: {
+                color: '#666',
+                font: '12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        alternateGridColor: 'rgba(255, 255, 255, .5)',
+        lineColor: '#C0D0E0',
+        tickColor: '#C0D0E0',
+        tickWidth: 1,
+        labels: {
+            style: {
+                color: '#666',
+                fontWeight: 'bold'
+            }
+        },
+        title: {
+            style: {
+                color: '#666',
+                font: '12px Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif'
+            }
+        }
+    },
+    legend: {
+        itemStyle: {
+            font: '9pt Trebuchet MS, Verdana, sans-serif',
+            color: '#3E576F'
+        },
+        itemHoverStyle: {
+            color: 'black'
+        },
+        itemHiddenStyle: {
+            color: 'silver'
+        }
+    },
+    labels: {
+        style: {
+            color: '#3E576F'
+        }
+    }
+};
+
+ // var highchartsOptions = Highcharts.setOptions(Highcharts.theme);
+   
+  </script>
+
+
+</head>
+<body>
+  
+  <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 00px;
+            margin-left: 25px;" >
+<div class="panel-heading"><div class="panel-title">pannel1</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container4" style="min-width:600px;height:300px"></div></div>
+</div>
+   <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 00px;
+            margin-left: 670px;" >
+<div class="panel-heading"><div class="panel-title">pannel2</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container9" style="min-width:600px;height:300px"></div></div>
+</div>
+
+
+   <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 400px;
+            margin-left: 670px;" >
+<div class="panel-heading"><div class="panel-title">pannel3</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container10" style="min-width:600px;height:300px"></div></div>
+</div>
+
+
+
+   <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 400px;
+            margin-left: 20px;" >
+<div class="panel-heading"><div class="panel-title">预占-任务关系图</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container10" style="min-width:600px;height:300px"></div></div>
+</div>
+
+
+
+   <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 400px;
+            margin-left: 1320px;" >
+<div class="panel-heading"><div class="panel-title">预占-未关闭的缺陷关系图</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container10" style="min-width:600px;height:300px"></div></div>
+</div>
+
+
+   <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 000px;
+            margin-left: 1320px;" >
+<div class="panel-heading"><div class="panel-title">预占-计划延期/需求响应率</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container10" style="min-width:600px;height:300px"></div></div>
+</div>
+
+
+   <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 800px;
+            margin-left: 1320px;" >
+<div class="panel-heading"><div class="panel-title">预占-dailybuild</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container10" style="min-width:600px;height:300px"></div></div>
+</div>
+
+   <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 800px;
+            margin-left: 20px;" >
+<div class="panel-heading"><div class="panel-title">预占-各模块变更</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container10" style="min-width:600px;height:300px"></div></div>
+</div>
+
+   <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 800px;
+            margin-left: 670px;" >
+<div class="panel-heading"><div class="panel-title">预占-功能重复开发</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container10" style="min-width:600px;height:300px"></div></div>
+</div>
+
+
+   <div class="panel panel-primary drsElement " style="border:1px solid #CCC;;margin-top: 1200px;
+            margin-left: 670px;" >
+<div class="panel-heading"><div class="panel-title">预占-版本变更情况</div>
+<div class="panel-options"><a href="#sample-modal" data-toggle="modal" data-target="#sample-modal-dialog-1" class="bg"><i class="entypo-cog"></i></a> <a href="#" data-rel="collapse"><i class="entypo-down-open"></i></a><a href="#" data-rel="reload"><i class="entypo-arrows-ccw"></i></a><a href="#" data-rel="close"><i class="entypo-cancel"></i></a></div></div>
+<div class="panel-body">  <div id="container10" style="min-width:600px;height:300px"></div></div>
+</div>
+
+
+</body>
+</html>
+
